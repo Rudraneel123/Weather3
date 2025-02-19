@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "../styleapp/Register.css";
 
 const Register = () => {
   const [username, setUsername] = useState("");
@@ -30,25 +31,31 @@ const Register = () => {
         <input
           type="text"
           placeholder="Username"
+          className="input-form"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           required
         />
-        <br />
+        <br style={{ gap: "2px" }} />
         <input
           type="password"
           placeholder="Password"
+          className="input-form"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
         />
         <br />
-        <button type="submit">Register</button>
+        <button type="submit" className="custom-button">
+          Register
+        </button>
       </form>
       {error && <p style={{ color: "red" }}>{error}</p>}
       <p>
         Already have an account?{" "}
-        <button onClick={() => navigate("/")}>Login</button>
+        <button onClick={() => navigate("/")} className="custom-button">
+          Login
+        </button>
       </p>
     </div>
   );

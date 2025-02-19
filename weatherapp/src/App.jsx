@@ -10,6 +10,7 @@ import {
   Navigate,
   useLocation,
 } from "react-router-dom";
+// import AnTD from "./components/AnTD";
 import AnTD from "./components/AnTD";
 import AddList from "./components/AddList";
 import AutoWeather from "./components/AutoWeather";

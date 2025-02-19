@@ -28,4 +28,13 @@ header {
     text-decoration: none;
     font-weight: bold;
   }
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Pushes button to the right */
+  }
   
+  .nav-links {
+    display: flex;
+    gap: 15px; /* Adds spacing between links */
+  }

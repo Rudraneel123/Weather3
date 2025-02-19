@@ -1,8 +1,8 @@
-
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 // import { Button, Input, Form, Typography } from "antd";
 // const { Title } = Typography;
+import "../styleapp/Register.css";
 
 const Login = ({ onLogin }) => {
   const [username, setUsername] = useState("");
@@ -44,6 +44,7 @@ const Login = ({ onLogin }) => {
         <input
           type="text"
           placeholder="Username"
+          className="input-form"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           required
@@ -52,20 +53,27 @@ const Login = ({ onLogin }) => {
         <input
           type="password"
           placeholder="Password"
+          className="input-form"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
         />
         <br />
-        <button type="submit">Login</button>
+        <button type="submit" className="custom-button">
+          Login
+        </button>
       </form>
       {error && <p style={{ color: "red" }}>{error}</p>}
       <p>
         Please Register if you don`t have an account{" "}
-        <button onClick={() => navigate("/userregister")}>Register</button>
+        <button
+          onClick={() => navigate("/userregister")}
+          className="custom-button"
+        >
+          Register
+        </button>
       </p>
     </div>
-    
   );
 };
 
