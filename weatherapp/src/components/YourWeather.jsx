@@ -1,7 +1,8 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../App.css";
 // import getWeather from "./api";
-import getWeather from "../api";
+// import getWeather from "../api";
+import selfWeather from "../selfweatherapi";
 import { useState, useEffect } from "react";
 import dateFormat from "dateformat";
 import { Container, Card, Alert, Image, Spinner } from "react-bootstrap";
@@ -17,7 +18,7 @@ function YourWeather() {
     setError("");
 
     try {
-      const weatherData = await getWeather(null, lat, lon); // Pass lat/lon instead of city
+      const weatherData = await selfWeather(null, lat, lon); // Pass lat/lon instead of city
       if (weatherData.cod !== 200) {
         setError("Could not fetch weather. Try again.");
         setWeather({});
